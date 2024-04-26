@@ -24,7 +24,7 @@
     <ProjectGuid>{00e8ef19-f99e-4bef-8ec1-0b20aa26739c}</ProjectGuid>
     <RootNamespace>Myproject</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>XOR_AND</ProjectName>
+    <ProjectName>Repetition</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
