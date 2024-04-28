@@ -2,7 +2,7 @@
 using namespace std;
 using std::cout;
 //#define number_to_the_power
-#define pointers
+//#define pointers
 void main()
 {
 	setlocale(LC_ALL, "");
