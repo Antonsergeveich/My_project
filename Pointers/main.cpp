@@ -13,7 +13,15 @@ using std::endl;
 //#define POINTERS_AND_ARRAYS_1
 //#define POINTERS_AND_ARRAYS_2
 //#define POINTERS_AND_ARRAYS_3
-#define POINTERS_AND_ARRAYS_4
+//#define POINTERS_AND_ARRAYS_4
+//#define POINTERS_AND_FUNCTIONS
+//#define POINTERS_AND_FUNCTIONS_1
+#define INITIALIZATION
+void ShowArray(int arr[], int size);
+int GetAmound(int* ptr, int size);
+int GetAmound_1(int* ptr, int size);
+void Swap(int* a, int* b);
+
 void main()
 {
 	setlocale(LC_ALL, "");
@@ -131,4 +139,60 @@ void main()
 	}
 #endif //  POINTERS_AND_ARRAYS_4
 
+#ifdef POINTERS_AND_FUNCTIONS
+	const int size = 5;
+	int arr[size] = { 33,44,7,8,9 };
+	ShowArray(arr, size);
+	cout << endl;
+	cout << "Amound of array elements: " << GetAmound_1(arr, size) << endl;
+	ShowArray(&arr[0], size);
+#endif // POINTERS_AND_FUNCTIONS
+
+#ifdef POINTERS_AND_FUNCTIONS_1//изменение параметров по указателю
+int av = 5, bv = 9;
+Swap(&av, &bv);
+cout << av << " " << bv << endl;
+#endif // POINTERS_AND_FUNCTIONS_1
+
+#ifdef INITIALIZATION
+int* ptr;//указатель не инициализирован, в нём мусор;
+ptr = 0;//сейчас ptr нулевой, так делать нельзя;
+cout << ptr << endl;
+ptr = NULL;//наследие языка 'C' так делать не рекомендуется;
+cout << ptr << endl;
+ptr = nullptr;//современный способ C++ создания нулевого указателя;
+cout << ptr << endl;
+#endif // INITIALIZATION
+}
+
+void ShowArray(int arr[], int size)
+	{
+		for (int i = 0; i < size; i++)
+		{
+			cout << *(arr + i) << tab;
+		}
+	}
+int GetAmound(int* ptr, int size)
+{
+	int sum = 0;
+	for (int i = 0; i < size; i++)
+	{
+		sum += *(ptr + i);
+	}
+	return sum;
+}
+int GetAmound_1(int* ptr, int size)
+{
+	int sum = 0;
+	for (int i = 0; i < size; i++,ptr++)
+	{
+		sum += *ptr;
+	}
+	return sum;
+}
+void Swap(int* a, int* b)
+{
+	int c = *a;
+	*a = *b;
+	*b = c;
 }
