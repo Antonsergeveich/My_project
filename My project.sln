@@ -9,7 +9,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Percentage of number", "Per
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test", "Test\Test.vcxproj", "{21D52F37-71B5-4397-B762-7A5A84FFCBDD}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Practice", "Practice\Practice.vcxproj", "{C8787F28-6C2D-410C-99A9-859B744EB491}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "William Shakespeare", "Practice\Practice.vcxproj", "{C8787F28-6C2D-410C-99A9-859B744EB491}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Pointers", "Pointers\Pointers.vcxproj", "{2072DE2C-A24E-44BD-ACE0-EC9F08A732F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,14 @@ Global
 		{C8787F28-6C2D-410C-99A9-859B744EB491}.Release|x64.Build.0 = Release|x64
 		{C8787F28-6C2D-410C-99A9-859B744EB491}.Release|x86.ActiveCfg = Release|Win32
 		{C8787F28-6C2D-410C-99A9-859B744EB491}.Release|x86.Build.0 = Release|Win32
+		{2072DE2C-A24E-44BD-ACE0-EC9F08A732F4}.Debug|x64.ActiveCfg = Debug|x64
+		{2072DE2C-A24E-44BD-ACE0-EC9F08A732F4}.Debug|x64.Build.0 = Debug|x64
+		{2072DE2C-A24E-44BD-ACE0-EC9F08A732F4}.Debug|x86.ActiveCfg = Debug|Win32
+		{2072DE2C-A24E-44BD-ACE0-EC9F08A732F4}.Debug|x86.Build.0 = Debug|Win32
+		{2072DE2C-A24E-44BD-ACE0-EC9F08A732F4}.Release|x64.ActiveCfg = Release|x64
+		{2072DE2C-A24E-44BD-ACE0-EC9F08A732F4}.Release|x64.Build.0 = Release|x64
+		{2072DE2C-A24E-44BD-ACE0-EC9F08A732F4}.Release|x86.ActiveCfg = Release|Win32
+		{2072DE2C-A24E-44BD-ACE0-EC9F08A732F4}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

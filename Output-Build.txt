@@ -1,0 +1,8 @@
+﻿Build started at 15:19...
+1>------ Build started: Project: Pointers, Configuration: Debug Win32 ------
+1>main.cpp
+1>C:\Users\Pro\source\repos\My project\Pointers\main.cpp(16,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+1>Pointers.vcxproj -> C:\Users\Pro\source\repos\My project\Debug\Pointers.exe
+1>Done building project "Pointers.vcxproj".
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
+========== Build completed at 15:19 and took 00,611 seconds ==========
