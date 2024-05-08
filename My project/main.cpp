@@ -37,6 +37,8 @@ void main()
 	cout << arr << endl;
 
 #endif // pointers
-
+unsigned int x = 4;
+x = x >> 1;
+cout << x;
 
 }
