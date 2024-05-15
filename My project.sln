@@ -19,6 +19,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Bit operations", "Bit opera
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Exponentiation of a number", "exponentiation of a number\exponentiation of a number.vcxproj", "{1978F7C7-1991-4731-A909-F36DCEB3298A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ASCII", "ASCII\ASCII.vcxproj", "{D1F6B79E-FA70-4942-9746-66AC7418C42F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -91,6 +93,14 @@ Global
 		{1978F7C7-1991-4731-A909-F36DCEB3298A}.Release|x64.Build.0 = Release|x64
 		{1978F7C7-1991-4731-A909-F36DCEB3298A}.Release|x86.ActiveCfg = Release|Win32
 		{1978F7C7-1991-4731-A909-F36DCEB3298A}.Release|x86.Build.0 = Release|Win32
+		{D1F6B79E-FA70-4942-9746-66AC7418C42F}.Debug|x64.ActiveCfg = Debug|x64
+		{D1F6B79E-FA70-4942-9746-66AC7418C42F}.Debug|x64.Build.0 = Debug|x64
+		{D1F6B79E-FA70-4942-9746-66AC7418C42F}.Debug|x86.ActiveCfg = Debug|Win32
+		{D1F6B79E-FA70-4942-9746-66AC7418C42F}.Debug|x86.Build.0 = Debug|Win32
+		{D1F6B79E-FA70-4942-9746-66AC7418C42F}.Release|x64.ActiveCfg = Release|x64
+		{D1F6B79E-FA70-4942-9746-66AC7418C42F}.Release|x64.Build.0 = Release|x64
+		{D1F6B79E-FA70-4942-9746-66AC7418C42F}.Release|x86.ActiveCfg = Release|Win32
+		{D1F6B79E-FA70-4942-9746-66AC7418C42F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
