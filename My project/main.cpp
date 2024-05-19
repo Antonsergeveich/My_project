@@ -37,8 +37,33 @@ void main()
 	cout << arr << endl;
 
 #endif // pointers
-unsigned int x = 4;
-x = x >> 1;
-cout << x;
+	//Task1:
+	//int i = 0;
+	//i = ++i + ++i;//1+1+2=4
+	//cout << i << endl;
 
+	//Task2:
+	//int i = 0;
+	//i = i++ + ++i;//1+1+1=3
+	//cout << i << endl;
+
+	//int i = 0;
+	//i = i++ + 1 + (++i *= 2); //в памяти i в выражении (++i*=2) = (i+1)+(i+1)=2; В выражении (++i*=2)=1*2=2;
+	//cout << i << endl;
+
+	//Task3:
+	//int i = 0;
+	//i = i++ + 1 + ++i * 2;// в выражении ++i * 2 без скобочек i в памяти равно 1: 2+1+1+1=5;
+	//cout << i << endl;
+
+	//Task5:
+	//int i = 0;
+	//i += i++ + 1 + (++i *= 2);//2+1+2+2+1=8;
+	//cout << i << endl;
+
+	//Task6:
+	int i = 0;
+	i *= i++ + 1 + (++i += 2);// 22
+	
+	cout << i << endl;
 }
