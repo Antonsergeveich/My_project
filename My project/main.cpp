@@ -62,8 +62,12 @@ void main()
 	//cout << i << endl;
 
 	//Task6:
-	int i = 0;
-	i *= i++ + 1 + (++i += 2);// 22
-	
-	cout << i << endl;
+	//int i = 0;
+	//i *= i++ + 1 + (++i += 2);// 22
+	//
+	//cout << i << endl;
+
+	int a = 3;
+	cout << a % 17 << endl;//3
+	cout << a / 17 << endl;//0
 }
