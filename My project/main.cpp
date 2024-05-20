@@ -67,7 +67,10 @@ void main()
 	//
 	//cout << i << endl;
 
-	int a = 3;
-	cout << a % 17 << endl;//3
-	cout << a / 17 << endl;//0
+	int a = 3; int b = 1024;
+	cout << a % 10 << endl;//3
+	cout << a / 10 << endl;//0
+	cout <<"sizeof(b) = " << sizeof(b) << endl;
+	cout <<"typeid(b).name() = " << typeid(b).name() << endl;
+
 }
