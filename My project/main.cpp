@@ -74,8 +74,6 @@ Task6:
 
 	cout << i << endl;
 #endif // INCREMENT
-
-
 #ifdef SIZEOF_TYPEID
 	int* arr = new int[5];
 	cout << "sizeof(new int[5]) = " << sizeof(new int[0]) << endl;
