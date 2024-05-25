@@ -67,10 +67,11 @@ void main()
 	//
 	//cout << i << endl;
 
-	int a = 3; int b = 1024;
-	cout << a % 10 << endl;//3
-	cout << a / 10 << endl;//0
-	cout <<"sizeof(b) = " << sizeof(b) << endl;
-	cout <<"typeid(b).name() = " << typeid(b).name() << endl;
-
+	//int a = 3; int b = 1024;
+	//cout << a % 10 << endl;//3
+	//cout << a / 10 << endl;//0
+	int* arr = new int[5];
+	cout <<"sizeof(new int[5]) = " << sizeof(new int[0]) << endl;
+	cout <<"typeid(new int[5]).name() = " << typeid(new int[0]).name() << endl;
+	delete[] arr;
 }
