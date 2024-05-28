@@ -1,9 +1,8 @@
-﻿﻿#include<iostream>
+﻿#include<iostream>
 using namespace std;
-
 using std::cout;
-using std::cin;
-using std::endl;
+using std::cout;
+using std::cout;
 
 #define tab "\t"
 
