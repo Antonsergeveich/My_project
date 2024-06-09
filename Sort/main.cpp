@@ -24,7 +24,7 @@ void quick_sort(int* arr, int first, int last)
 	{
 		int left = first;
 		int right = last;
-		int middle = arr[(left + right) / 2];
+		int middle = arr[(left + right) / 2]; //средний элемент сортируемого массива;
 		do
 		{
 			while (arr[left] < middle)left++;
