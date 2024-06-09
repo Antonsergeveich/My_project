@@ -11,13 +11,16 @@ void main()
 	int arr[SIZE] = { 10,2,84,7,11,23,99,4,55,1 };
 	Print(arr, 10);
 	cout << endl;
-	quick_sort(arr, 0, SIZE - 1);
+	quick_sort(arr, 0, SIZE-1);
 	Print(arr, 10);
 }
 
-void quick_sort(int* arr, int first, int last)
+void quick_sort(int* arr, int first, int last) 
+//*arr - указатель на массив на массив который мы хотим отсортировать;
+//first - индекс первого элемента той части массива которую мы хотим отсортировать;
+//last - индекс последнего элемента той части массива которую мы хотим отсортировать;
 {
-	if (first < last)
+	if (first < last) 
 	{
 		int left = first;
 		int right = last;
