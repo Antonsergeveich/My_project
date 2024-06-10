@@ -695,7 +695,15 @@ int** Allocate(const int rows, const int cols)
 	}
 	return arr;
 }
-
+int** Allocate(const int rows, const int cols)
+{
+	int** arr = new int* [rows];
+	for (int i = 0; i < rows; i++)
+	{
+		arr[i] = new int[cols];
+	}
+	return arr;
+}
 void Clear(int** arr, const int rows)
 {
 	//3)Сначала удаляем строки:
