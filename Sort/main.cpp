@@ -1,10 +1,17 @@
 #include<iostream>
 using namespace std;
 
+const int ROWS = 4;
+const int COLS = 5;
+
+void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS, int minRand = 0, int maxRand = 50);
 void Print(const int arr[], const int n);
+void Print(const int arr[ROWS][COLS], const int ROWS, const int COLS);
 void quick_sort(int* arr, int first, int last);
 void selection_sort(int arr[], int size);
 void selection_Sort(int arr[], const int n);
+void selection_Sort2(int arr[ROWS][COLS], const int ROWS, const int COLS);
+
 
 void main()
 {
@@ -14,11 +21,26 @@ void main()
 	Print(arr, 10);
 	cout << endl;
 	/*quick_sort(arr, 0, SIZE-1);
-	Print(arr, 10);*/
-	selection_Sort(arr, 10);
 	Print(arr, 10);
+	selection_Sort(arr, 10);
+	Print(arr, 10);*/
+	int arr_2[ROWS][COLS];
+	FillRand(arr_2, 4, 5);
+	selection_Sort2(arr_2,4,5);
+	Print(arr_2,4,5);
+
 }
 
+void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS, int minRand, int maxRand)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			arr[i][j] = rand() % 100;
+		}
+	}
+}
 void Print(const int arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
@@ -26,12 +48,23 @@ void Print(const int arr[], const int n)
 		cout << arr[i] << "\t";
 	}
 }
+void Print(const int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			cout << arr[i][j] << "\t";
+		}
+		cout << endl;
+	}
+}
 void quick_sort(int* arr, int first, int last) //Ѕыстра€ сортировка
 //*arr - указатель на массив на массив который мы хотим отсортировать;
 //first - индекс первого элемента той части массива которую мы хотим отсортировать;
 //last - индекс последнего элемента той части массива которую мы хотим отсортировать;
 {
-	if (first < last) 
+	if (first < last)
 	{
 		int left = first;
 		int right = last;
@@ -92,6 +125,34 @@ void selection_Sort(int arr[], const int n) //—ортировка выбором (Ёффективный)
 				int buffer = arr[i];
 				arr[i] = arr[j];
 				arr[j] = buffer;
+			}
+		}
+	}
+}
+void selection_Sort2(int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	//Ёти два цикла выбирают элемент
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			//Ёти два цикла перебирают оставшиес€ элементы в поиске минимального значени€
+			for (int k = i; k < ROWS; k++)
+			{
+				for (int l = k == i ? j + 1 : 0; l < COLS; l++)
+				{
+					/*if (k == i && l == 0)l = j + 1;
+					if (l == COLS)break;*/
+					//arr[i][j] - выбранный элемент
+					//arr[k][l] - перебираемый элемент
+
+					if (arr[i][j] > arr[k][l])
+					{
+						int buffer = arr[i][j];
+						arr[i][j] = arr[k][l];
+						arr[k][l] = buffer;
+					}
+				}
 			}
 		}
 	}
