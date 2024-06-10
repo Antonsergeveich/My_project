@@ -516,14 +516,15 @@ int** Allocate(const int rows, const int cols)
 	}
 	return arr;
 }
-int** Allocate(const int rows, const int cols)
+void Clear(int** arr, const int rows)
 {
-	int** arr = new int* [rows];
+	//3)Сначала удаляем строки:
 	for (int i = 0; i < rows; i++)
 	{
-		arr[i] = new int[cols] {};
+		delete[] arr[i];
 	}
-	return arr;
+	//4)Удаляем массив указателей:
+	delete[] arr;
 }
 int** Allocate(const int rows, const int cols)
 {
@@ -534,14 +535,13 @@ int** Allocate(const int rows, const int cols)
 	}
 	return arr;
 }
-int** Allocate(const int rows, const int cols)
+void Clear(int** arr, const int rows)
 {
-	int** arr = new int* [rows];
 	for (int i = 0; i < rows; i++)
 	{
-		arr[i] = new int[cols] {};
+		delete[] arr[i];
 	}
-	return arr;
+	delete[] arr;
 }
 int** Allocate(const int rows, const int cols)
 {
@@ -551,6 +551,48 @@ int** Allocate(const int rows, const int cols)
 		arr[i] = new int[cols] {};
 	}
 	return arr;
+}
+void Clear(int** arr, const int rows)
+{
+	for (int i = 0; i < rows; i++)
+	{
+		delete[] arr[i];
+	}
+	delete[] arr;
+}
+int** Allocate(const int rows, const int cols)
+{
+	int** arr = new int* [rows];
+	for (int i = 0; i < rows; i++)
+	{
+		arr[i] = new int[cols] {};
+	}
+	return arr;
+}
+void Clear(int** arr, const int rows)
+{
+	for (int i = 0; i < rows; i++)
+	{
+		delete[] arr[i];
+	}
+	delete[] arr;
+}
+int** Allocate(const int rows, const int cols)
+{
+	int** arr = new int* [rows];
+	for (int i = 0; i < rows; i++)
+	{
+		arr[i] = new int[cols] {};
+	}
+	return arr;
+}
+void Clear(int** arr, const int rows)
+{
+	for (int i = 0; i < rows; i++)
+	{
+		delete[] arr[i];
+	}
+	delete[] arr;
 }
 int** Allocate(const int rows, const int cols)
 {
@@ -695,6 +737,14 @@ int** Allocate(const int rows, const int cols)
 	}
 	return arr;
 }
+void Clear(int** arr, const int rows)
+{
+	for (int i = 0; i < rows; i++)
+	{
+		delete[] arr[i];
+	}
+	delete[] arr;
+}
 int** Allocate(const int rows, const int cols)
 {
 	int** arr = new int* [rows];
@@ -703,16 +753,6 @@ int** Allocate(const int rows, const int cols)
 		arr[i] = new int[cols];
 	}
 	return arr;
-}
-void Clear(int** arr, const int rows)
-{
-	//3)Сначала удаляем строки:
-	for (int i = 0; i < rows; i++)
-	{
-		delete[] arr[i];
-	}
-	//4)Удаляем массив указателей:
-	delete[] arr;
 }
 void Print(int** arr, const int rows, const int cols)
 {
