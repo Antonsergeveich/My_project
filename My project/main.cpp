@@ -1,6 +1,8 @@
 ﻿#include<iostream>
 using namespace std;
 using std::cout;
+using std::cin;
+using std::endl;
 
 int** Allocate(const int rows, const int cols);
 void Clear(int** arr, const int rows);
@@ -15,8 +17,8 @@ void FillRand(int** arr, const int rows, const int cols);
 //#define pointers
 //#define INCREMENT
 //#define SIZEOF_TYPEID
-//#define DYNAMIC_MEMORY1
-#define DYNAMIC_MEMORY2
+#define DYNAMIC_MEMORY1
+//#define DYNAMIC_MEMORY2
 void main()
 {
 	setlocale(LC_ALL, "");
@@ -310,6 +312,32 @@ Task6:
 	delete[] arr;
 	int* arr = new int[n];
 	delete[n] arr;
+	int* arr = new int[n];
+	delete[] arr;
+	int* arr = new int[n];
+	delete[] arr;
+	int* arr = new int[n];
+	delete[] arr;
+	int* arr = new int[n];
+	delete[] arr;
+	int* arr = new int[n];
+	delete[] arr;
+	int* arr = new int[n];
+	delete[] arr;
+	int* arr = new int[n];
+	delete[] arr;
+	int* arr = new int[n];
+	delete[] arr;
+	int* arr = new int[n];
+	delete[] arr;
+	int* arr = new int[n];
+	delete[] arr;
+	int* arr = new int[n];
+	delete[] arr;
+	int* arr = new int[n];
+	delete[] arr;
+	int* arr = new int[n];
+	delete[] arr;
 	int* arr = new int[n];
 	delete[] arr;
 	int* arr = new int[n];
@@ -832,7 +860,7 @@ void Clear(int** arr, const int rows)
 		delete[] arr[i];
 	}
 	delete[] arr;
-} 
+}
 int** Allocate(const int rows, const int cols)
 {
 	int** arr = new int* [rows];
