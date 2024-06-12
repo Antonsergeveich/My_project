@@ -11,7 +11,7 @@ void quick_sort(int* arr, int first, int last);
 void selection_sort(int arr[], int size);
 void selection_Sort(int arr[], const int n);
 void selection_Sort2(int arr[ROWS][COLS], const int ROWS, const int COLS);
-
+void insertion_sort(int arr[], int size);
 
 void main()
 {
@@ -20,14 +20,14 @@ void main()
 	int arr[SIZE] = { 10,2,84,7,-11,23,99,4,55,1 };
 	Print(arr, 10);
 	cout << endl;
-	/*quick_sort(arr, 0, SIZE-1);
+	insertion_sort(arr, SIZE);
 	Print(arr, 10);
-	selection_Sort(arr, 10);
+	/*selection_Sort(arr, 10);
 	Print(arr, 10);*/
-	int arr_2[ROWS][COLS];
+	/*int arr_2[ROWS][COLS];
 	FillRand(arr_2, 4, 5);
 	selection_Sort2(arr_2,4,5);
-	Print(arr_2,4,5);
+	Print(arr_2,4,5);*/
 
 }
 
@@ -166,6 +166,32 @@ void selection_Sort2(int arr[ROWS][COLS], const int ROWS, const int COLS)
 					}
 				}
 			}
+		}
+	}
+}
+void insertion_sort(int arr[], int size)
+//Сортировка вставками
+//insertion_sort:
+//1. Проходим по массиву слева на право сортируя в порядке возрастания. 
+//Берём число крайнее слево и сравниваем его с числом слева от нашего числа,
+//если слева числа нет (нулевой элемент массива) - элемент на своём месте,
+//если оно меньше числа слева - меняем местами.
+//Сравниваем со следующим числом слева если наше число меньше меняем местами.
+//И так пока наше число не будет больше числа слева.
+//2. Переходим к следующему элементу нашего массива, повторяем действия выше. 
+{
+	for (int i = 1; i < size; i++)
+	{
+		int j = i; // j индекс элемента который мы будем вставлять
+		while (j != 0 && arr[j] < arr[j - 1]) 
+			// цикл будет выполняться если выбранный элемент не находится вначале нашего массива
+			//И если выбранный элемент меньше элемента слева от выбранного
+			//Если так то меняем местами выбранный элемент с элементом слева от выбранного;
+		{
+			int buffer = arr[j];
+			arr[j] = arr[j - 1];
+			arr[j - 1] = buffer;
+			j--;
 		}
 	}
 }
