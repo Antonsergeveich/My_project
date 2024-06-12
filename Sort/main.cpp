@@ -5,13 +5,13 @@ const int ROWS = 4;
 const int COLS = 5;
 
 void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS, int minRand = 0, int maxRand = 50);
-void Print(const int arr[], const int n);
+void Print(const int arr[], const int size);
 void Print(const int arr[ROWS][COLS], const int ROWS, const int COLS);
 void quick_sort(int* arr, int first, int last);
-void selection_sort(int arr[], int size);
-void selection_Sort(int arr[], const int n);
+void insertion_sort(int arr[], const int size);
+void selection_sort(int arr[], const int size);
+void selection_Sort(int arr[], const int size);
 void selection_Sort2(int arr[ROWS][COLS], const int ROWS, const int COLS);
-void insertion_sort(int arr[], int size);
 
 void main()
 {
@@ -20,14 +20,29 @@ void main()
 	int arr[SIZE] = { 10,2,84,7,-11,23,99,4,55,1 };
 	Print(arr, 10);
 	cout << endl;
-	insertion_sort(arr, SIZE);
+
+	/*quick_sort(arr,0,9);
 	Print(arr, 10);
-	/*selection_Sort(arr, 10);
-	Print(arr, 10);*/
-	/*int arr_2[ROWS][COLS];
+	cout << endl;*/
+
+	/*insertion_sort(arr, 10);
+	Print(arr, 10);
+	cout << endl;*/
+
+	/*selection_sort(arr, 10);
+	Print(arr, 10);
+	cout << endl;*/
+
+	selection_Sort(arr, 10);
+	Print(arr, 10);
+	cout << endl;
+	
+	int arr_2[ROWS][COLS];
 	FillRand(arr_2, 4, 5);
+	cout << endl;
+
 	selection_Sort2(arr_2,4,5);
-	Print(arr_2,4,5);*/
+	Print(arr_2,4,5);
 
 }
 
@@ -41,9 +56,9 @@ void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS, int minRand, 
 		}
 	}
 }
-void Print(const int arr[], const int n)
+void Print(const int arr[], const int size)
 {
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < size; i++)
 	{
 		cout << arr[i] << "\t";
 	}
@@ -97,7 +112,7 @@ void quick_sort(int* arr, int first, int last) //Быстрая сортиров
 		quick_sort(arr, left, last);   //рекурсия справа
 	}
 }
-void selection_sort(int arr[], int size) //Сортировка выбором (не эффективный)
+void selection_sort(int arr[], const int size) //Сортировка выбором (не эффективный)
 {
 	int index; //индекс перебираемого элемента
 	int less; //индекс минимального элемента в перебираемом массиве
@@ -124,11 +139,11 @@ void selection_sort(int arr[], int size) //Сортировка выбором (
 //3.Переходим к следующему элементу массива, отсортированный остаётся слева;
 //4.C каждой итерацией массив неотсортированных элементов уменьшается;
 
-void selection_Sort(int arr[], const int n) //Сортировка выбором (Эффективный)
+void selection_Sort(int arr[], const int size) //Сортировка выбором (Эффективный)
 {
-	for (int i = 0; i < n; i++) // счётчик i выбирает элемент массива в который будет помещено минимальное значение
+	for (int i = 0; i < size; i++) // счётчик i выбирает элемент массива в который будет помещено минимальное значение
 	{
-		for (int j = i + 1; j < n; j++) // счётчик j перебирает оставшиеся элементы массива
+		for (int j = i + 1; j < size; j++) // счётчик j перебирает оставшиеся элементы массива
 		{
 			//arr[i] выбранный элемент массива
 			//arr[j] перебираемый элемент массива
@@ -169,7 +184,7 @@ void selection_Sort2(int arr[ROWS][COLS], const int ROWS, const int COLS)
 		}
 	}
 }
-void insertion_sort(int arr[], int size)
+void insertion_sort(int arr[], const int size)
 //Сортировка вставками
 //insertion_sort:
 //1. Проходим по массиву слева на право сортируя в порядке возрастания. 
