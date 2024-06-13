@@ -12,6 +12,8 @@ void insertion_sort(int arr[], const int size);
 void selection_sort(int arr[], const int size);
 void selection_Sort(int arr[], const int size);
 void selection_Sort2(int arr[ROWS][COLS], const int ROWS, const int COLS);
+template <class T>
+void sort(T array[], size_t size);
 
 void main()
 {
@@ -33,7 +35,7 @@ void main()
 	Print(arr, 10);
 	cout << endl;*/
 
-	selection_Sort(arr, 10);
+	/*selection_Sort(arr, 10);
 	Print(arr, 10);
 	cout << endl;
 	
@@ -42,8 +44,10 @@ void main()
 	cout << endl;
 
 	selection_Sort2(arr_2,4,5);
-	Print(arr_2,4,5);
+	Print(arr_2,4,5);*/
 
+	sort(arr, 9);
+	Print(arr, 10);
 }
 
 void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS, int minRand, int maxRand)
@@ -223,4 +227,13 @@ void sort(T array[], size_t size)
 			}
 		}
 	}
+}
+template<class T>
+void display(T array[], size_t size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		cout << array[i] << " ";
+	}
+	cout << endl;
 }
