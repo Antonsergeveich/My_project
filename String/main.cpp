@@ -1,4 +1,4 @@
-#include<iostream>
+п»ї#include<iostream>
 using std::cin;
 using std::cout;
 using std::endl;
@@ -11,8 +11,8 @@ String operator + (const String& left, const String& right);
 
 class String
 {
-	unsigned int size;	//Размер строки в Байтах.
-	char* str;			//Указатель на строку в динамической памяти.
+	unsigned int size;	//Р Р°Р·РјРµСЂ СЃС‚СЂРѕРєРё РІ Р‘Р°Р№С‚Р°С….
+	char* str;			//РЈРєР°Р·Р°С‚РµР»СЊ РЅР° СЃС‚СЂРѕРєСѓ РІ РґРёРЅР°РјРёС‡РµСЃРєРѕР№ РїР°РјСЏС‚Рё.
 public:
 	unsigned int get_size()const
 	{
@@ -45,19 +45,19 @@ public:
 		this->size = other.size;
 		//this->str = other.str;	//Shallow copy
 		this->str = new char[size] {};
-		for (int i = 0; i < size; i++)this->str[i] = other.str[i];	//Побитовое (поэлементное, побайтовое) копирование.
+		for (int i = 0; i < size; i++)this->str[i] = other.str[i];	//РџРѕР±РёС‚РѕРІРѕРµ (РїРѕСЌР»РµРјРµРЅС‚РЅРѕРµ, РїРѕР±Р°Р№С‚РѕРІРѕРµ) РєРѕРїРёСЂРѕРІР°РЅРёРµ.
 		//Deep copy.
 		cout << "CopyConstructor:" << this << endl;
 	}
 	String(String&& other)
 	{
-		//MoveConstructor должен работать так, как НЕ должен работать CopyConstractor, то есть,
-		//CopyConstructor должен выполнять DeepCopy
-		//MoveConstructor должен выполнять ShallowCopy, 
-		//то есть копировать только адрес на уже выделенную память
-		//MoveConstructor НЕ ДОЛЖЕН ВЫДЕЛЯТЬ ДИНАМИЧЕСКУЮ ПАМЯТЬ!!!
-		//он берет память временного безымянного объекта, и передает ее создаваемому объекту.
-		//При этом, временный объект должен потерять доступ к своему значению.
+		//MoveConstructor РґРѕР»Р¶РµРЅ СЂР°Р±РѕС‚Р°С‚СЊ С‚Р°Рє, РєР°Рє РќР• РґРѕР»Р¶РµРЅ СЂР°Р±РѕС‚Р°С‚СЊ CopyConstractor, С‚Рѕ РµСЃС‚СЊ,
+		//CopyConstructor РґРѕР»Р¶РµРЅ РІС‹РїРѕР»РЅСЏС‚СЊ DeepCopy
+		//MoveConstructor РґРѕР»Р¶РµРЅ РІС‹РїРѕР»РЅСЏС‚СЊ ShallowCopy, 
+		//С‚Рѕ РµСЃС‚СЊ РєРѕРїРёСЂРѕРІР°С‚СЊ С‚РѕР»СЊРєРѕ Р°РґСЂРµСЃ РЅР° СѓР¶Рµ РІС‹РґРµР»РµРЅРЅСѓСЋ РїР°РјСЏС‚СЊ
+		//MoveConstructor РќР• Р”РћР›Р–Р•Рќ Р’Р«Р”Р•Р›РЇРўР¬ Р”РРќРђРњРР§Р•РЎРљРЈР® РџРђРњРЇРўР¬!!!
+		//РѕРЅ Р±РµСЂРµС‚ РїР°РјСЏС‚СЊ РІСЂРµРјРµРЅРЅРѕРіРѕ Р±РµР·С‹РјСЏРЅРЅРѕРіРѕ РѕР±СЉРµРєС‚Р°, Рё РїРµСЂРµРґР°РµС‚ РµРµ СЃРѕР·РґР°РІР°РµРјРѕРјСѓ РѕР±СЉРµРєС‚Сѓ.
+		//РџСЂРё СЌС‚РѕРј, РІСЂРµРјРµРЅРЅС‹Р№ РѕР±СЉРµРєС‚ РґРѕР»Р¶РµРЅ РїРѕС‚РµСЂСЏС‚СЊ РґРѕСЃС‚СѓРї Рє СЃРІРѕРµРјСѓ Р·РЅР°С‡РµРЅРёСЋ.
 		//C++11
 		this->size = other.size;
 		this->str = other.str;
@@ -73,15 +73,15 @@ public:
 	//			Operators:
 	String& operator=(const String& other)
 	{
-		//0) Проверяем, не является ли this и other одним и тем же объектом:
+		//0) РџСЂРѕРІРµСЂСЏРµРј, РЅРµ СЏРІР»СЏРµС‚СЃСЏ Р»Рё this Рё other РѕРґРЅРёРј Рё С‚РµРј Р¶Рµ РѕР±СЉРµРєС‚РѕРј:
 		if (this == &other)return *this;
-		//1) Удаляем старое значение объекта:
+		//1) РЈРґР°Р»СЏРµРј СЃС‚Р°СЂРѕРµ Р·РЅР°С‡РµРЅРёРµ РѕР±СЉРµРєС‚Р°:
 		delete[] this->str;
-		//2) Выполняем копирование:
+		//2) Р’С‹РїРѕР»РЅСЏРµРј РєРѕРїРёСЂРѕРІР°РЅРёРµ:
 		this->size = other.size;
 		//this->str = other.str;	//Shallow copy
 		this->str = new char[size] {};
-		for (int i = 0; i < size; i++)this->str[i] = other.str[i];	//Побитовое (поэлементное, побайтовое) копирование.
+		for (int i = 0; i < size; i++)this->str[i] = other.str[i];	//РџРѕР±РёС‚РѕРІРѕРµ (РїРѕСЌР»РµРјРµРЅС‚РЅРѕРµ, РїРѕР±Р°Р№С‚РѕРІРѕРµ) РєРѕРїРёСЂРѕРІР°РЅРёРµ.
 		//Deep copy.
 		cout << "CopyAssignment:\t" << this << endl;
 		return *this;
@@ -119,7 +119,7 @@ public:
 String operator+(const String& left, const String& right)
 {
 	String cat(left.get_size() + right.get_size() - 1);	//Size constructor
-	//cat - локальный объект, он существует только с впределах функции operator+();
+	//cat - Р»РѕРєР°Р»СЊРЅС‹Р№ РѕР±СЉРµРєС‚, РѕРЅ СЃСѓС‰РµСЃС‚РІСѓРµС‚ С‚РѕР»СЊРєРѕ СЃ РІРїСЂРµРґРµР»Р°С… С„СѓРЅРєС†РёРё operator+();
 	for (int i = 0; i < left.get_size(); i++)
 		//cat.get_str()[i] = left.get_str()[i];
 		cat[i] = left[i];
@@ -166,7 +166,7 @@ void main()
 
 #ifdef INPUT_CHECK
 	String str;
-	cout << "Введите строку: "; cin >> str;
+	cout << "Р’РІРµРґРёС‚Рµ СЃС‚СЂРѕРєСѓ: "; cin >> str;
 	cout << str << endl;
 #endif // INPUT_CHECK
 
@@ -187,14 +187,14 @@ void main()
 #ifdef HOW_CAN_WE_CALL_CONSTRUCTORS
 	String str1;	//Default constructor
 	String str2 = "Hello";	//Single-argument constructor
-	String str3 = str2;	//Copy constructor - потому что мы создаем объект
+	String str3 = str2;	//Copy constructor - РїРѕС‚РѕРјСѓ С‡С‚Рѕ РјС‹ СЃРѕР·РґР°РµРј РѕР±СЉРµРєС‚
 	String str4;
 	str4.print();
-	str4 = str3;	//Copy assignment (operator=). Copy constructor вызвать невозможно,
-	//поскольку объект str4 уже создан
-	String str5();	//НЕ Default constructor, здесь вообще не создается объект.
-	//Объявление функции str5, которая ничего не принимает, 
-	//и возвращает значение типа String.
-	String str6{};	//Явный вызов конструктора по умолчанию.	  
+	str4 = str3;	//Copy assignment (operator=). Copy constructor РІС‹Р·РІР°С‚СЊ РЅРµРІРѕР·РјРѕР¶РЅРѕ,
+	//РїРѕСЃРєРѕР»СЊРєСѓ РѕР±СЉРµРєС‚ str4 СѓР¶Рµ СЃРѕР·РґР°РЅ
+	String str5();	//РќР• Default constructor, Р·РґРµСЃСЊ РІРѕРѕР±С‰Рµ РЅРµ СЃРѕР·РґР°РµС‚СЃСЏ РѕР±СЉРµРєС‚.
+	//РћР±СЉСЏРІР»РµРЅРёРµ С„СѓРЅРєС†РёРё str5, РєРѕС‚РѕСЂР°СЏ РЅРёС‡РµРіРѕ РЅРµ РїСЂРёРЅРёРјР°РµС‚, 
+	//Рё РІРѕР·РІСЂР°С‰Р°РµС‚ Р·РЅР°С‡РµРЅРёРµ С‚РёРїР° String.
+	String str6{};	//РЇРІРЅС‹Р№ РІС‹Р·РѕРІ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ.	  
 #endif // HOW_CAN_WE_CALL_CONSTRUCTORS
 }
