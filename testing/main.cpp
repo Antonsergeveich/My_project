@@ -1,15 +1,14 @@
 #include<iostream>
 using namespace std;
 
-int b = 1;
-
-void Test(int a, int b) {
-	cout << a + ::b;
-
-}
-
 int main() {
-	int b = 11;
-	Test(10, b);
+
+	char str2[3];
+
+	str2[0] = "b";
+	str2[1] = "e";
+	str2[2] = "e";
+
+	cout << str2;
 	return 0;
 }
